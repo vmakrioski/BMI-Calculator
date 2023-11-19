@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #1152bc, #64afe9);
+  font-family: "Quicksand", sans-serif;
+}
+.box {
+  width: 500px;
+  background: #fafafa;
+  color: #000;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
+}
+h1 {
+  color: #1152bc;
+  font-weight: 700;
+  font-size: 36px;
+  padding: 30px 0;
+}
+.content {
+  padding: 0 30px;
+}
+.input {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.input label,
+.inputW label,
+.inputH label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+.input input,
+.inputW input,
+.inputH input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #1152bc;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Quicksand", sans-serif;
+}
+.inputW,
+.inputH {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.inputH {
+  margin-right: 20px;
+}
+button.calculate {
+  cursor: pointer;
+  color: #fff;
+  background: #1152bc;
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+.result {
+  padding: 10px 20px;
+}
+.result p {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
+}
+.result #result {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1152bc;
+  background-color: #eaeaea;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 55px;
+  margin-bottom: 25px;
+}
+#comment {
+  color: #1152bc;
+  font-weight: 700;
+}
+.comment {
+  display: none;
+  border: dashed 1px;
+  border-radius: 7px;
+  padding: 5px;
+}
+.gender {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.gender .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-top: 7px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.gender .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.gender .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.gender .container input:checked ~ .checkmark {
+  background-color: #1152bc;
+}
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.gender .container input:checked ~ .checkmark::after {
+  display: block;
+}
+.gender .container .checkmark::after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.containerHW {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 300px;
+}
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
+}
+#modalText {
+  font-size: 18px;
+  color: rgb(24, 23, 23);
+}
+.close {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.containerHW input::-webkit-inner-spin-button,
+.containerHW input::-webkit-outer-spin-button,
+.text-input::-webkit-inner-spin-button,
+.text-input::-webkit-outer-spin-button {
+  display: none;
+}
+@media (max-width: 700px) {
+  .box {
+    width: 380px;
+  }
+  .input label {
+    font-size: 18px;
+  }
+  .inputH label,
+  .inputW label {
+    font-size: 14px;
+  }
+  .input input,
+  .inputH input,
+  .inputW input {
+    font-size: 24px;
+  }
+  .modal-content {
+    width: 380px;
+  }
+}
